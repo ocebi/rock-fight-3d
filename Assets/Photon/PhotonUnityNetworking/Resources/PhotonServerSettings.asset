@@ -38,6 +38,12 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - TakeDamage
+  - SetThrowerTeam
+  - PickMedkit
+  - SetHasHit
+  - SetRunAnimation
+  - TriggerThrowAnimation
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

@@ -6,22 +6,22 @@ using Photon.Pun;
 public class PlayerSetup : MonoBehaviourPunCallbacks
 {
     private MobileTPSController mobileTPSController;
-    private Camera playerCamera;
-    private void Awake()
+    public GameObject playerCamera;
+    private void Start()
     {
         mobileTPSController = GetComponent<MobileTPSController>();
-        playerCamera = GetComponent<Camera>();
 
         if (!photonView.IsMine)
         {
             mobileTPSController.enabled = false;
-            playerCamera.enabled = false;
-            return;
+            playerCamera.SetActive(false);
+            
         }
         else
         {
-            mobileTPSController.joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FixedJoystick>() as FixedJoystick;
-            mobileTPSController.rb = GetComponent<Rigidbody>();
+            mobileTPSController.enabled = true;
+            playerCamera.SetActive(true);
         }
+        
     }
 }
